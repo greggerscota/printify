@@ -1,4 +1,8 @@
-﻿
+﻿/*
+* jQuery Printify v1.0
+* https://github.com/xenposeidon/printify
+* April 2013
+*/
 jQuery.fn.printify = function () {
     if (this.size() > 1) {
         this.eq(0).print();
