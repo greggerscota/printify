@@ -4,7 +4,7 @@
 </head>
 <body>
 	<form id="testForm">
-    	<select id="ddlCreditCards" name="ddlCreditCards" required="required">
+    	<select id="ddlCreditCards" name="ddlCreditCards" required>
     		<option value="">Select Payment Type</option>
     		<option value="Visa">Visa</option>
     		<option value="MasterCard">MasterCard</option>
@@ -34,8 +34,13 @@
 	        }
 	    );
 		$(document).on('click', '#btnSubmitOrder', function(){
-			$('#testForm').checkValidity();
-			
+			$('#testForm').checkValidity();			
+		});
+		$(document).on('change', '#ddlCreditCards', function(){
+			if($(this).val() == "AmericanExpress")
+				$('#txtPaymentSecurityCode').attr('pattern', '.{3,3}[0-9]');
+			else
+				$('#txtPaymentSecurityCode').attr('pattern', '.{2,2}[0-9]');
 		});
 	});
 	</script>
