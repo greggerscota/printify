@@ -1,4 +1,5 @@
-﻿jQuery.fn.printify = function () {
+﻿
+jQuery.fn.printify = function () {
     if (this.size() > 1) {
         this.eq(0).print();
         return;
